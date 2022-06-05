@@ -571,6 +571,48 @@ function slideslider12(n){
 }
 
 
+// slider 13
+const myslide13 = document.querySelectorAll('.slider13'),
+    dot13 = document.querySelectorAll('.dot13');
+
+let counter13 = 1;
+slideslider13(counter13);
+
+function plusSlides13(n){
+    counter13 += n;
+    slideslider13(counter13);
+}
+
+function currentSlide13(n){
+    counter13 = n;
+    slideslider13(counter13);
+}
+
+function slideslider13(n){
+    let i;
+
+    for(i = 0; i < myslide13.length; i++){
+        myslide13[i].style.display = "none";
+    }
+
+    for(i = 0; i < dot13.length; i++){
+        dot13[i].classList.remove('dot_active');
+    }
+
+    if(n > myslide13.length){
+        counter13 = 1;
+    }
+
+    if(n < 1){
+        counter13 = myslide13.length;
+    }
+
+    myslide13[counter13 - 1].style.display = "block";
+    dot13[counter13 - 1].classList.add('dot_active');
+}
+
+
+
 
 // scroll sections active link
 const sections = document.querySelectorAll('section[id]')
